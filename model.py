@@ -3,12 +3,10 @@ from utils import im2col, col2im
 
 class Conv:
     def __init__(self, in_c, out_c, f_size, stride=1, pad=1):
-        # He initialization
         self.w = np.random.randn(out_c, in_c, f_size, f_size) * np.sqrt(2 / (in_c * f_size * f_size))
         self.b = np.zeros((out_c, 1))
         self.stride, self.pad = stride, pad
         
-        # Adam Optimizer Parametreleri
         self.m_w, self.v_w = np.zeros_like(self.w), np.zeros_like(self.w)
         self.m_b, self.v_b = np.zeros_like(self.b), np.zeros_like(self.b)
         self.t = 0
@@ -33,18 +31,15 @@ class Conv:
         dcol = w_flat.T @ dout_reshaped
         dx = col2im(dcol, self.x.shape, self.w.shape[2], self.w.shape[3], self.pad, self.stride)
         
-        # --- Adam Optimizer Güncellemesi ---
         self.t += 1
         beta1, beta2, eps = 0.9, 0.999, 1e-8
         
-        # Ağırlıklar (Weights)
         self.m_w = beta1 * self.m_w + (1 - beta1) * dw
         self.v_w = beta2 * self.v_w + (1 - beta2) * (dw**2)
         m_hat = self.m_w / (1 - beta1**self.t)
         v_hat = self.v_w / (1 - beta2**self.t)
         self.w -= lr * m_hat / (np.sqrt(v_hat) + eps)
         
-        # Yanlılık (Bias)
         self.m_b = beta1 * self.m_b + (1 - beta1) * db
         self.v_b = beta2 * self.v_b + (1 - beta2) * (db**2)
         mb_hat = self.m_b / (1 - beta1**self.t)
@@ -80,8 +75,7 @@ class Dense:
     def __init__(self, in_dim, out_dim):
         self.w = np.random.randn(in_dim, out_dim) * np.sqrt(2 / in_dim)
         self.b = np.zeros((1, out_dim))
-        
-        # Adam Optimizer Parametreleri
+
         self.m_w, self.v_w = np.zeros_like(self.w), np.zeros_like(self.w)
         self.m_b, self.v_b = np.zeros_like(self.b), np.zeros_like(self.b)
         self.t = 0
@@ -96,18 +90,15 @@ class Dense:
         db = np.sum(dout, axis=0, keepdims=True)
         dx_flat = dout @ self.w.T
         
-        # --- Adam Optimizer Güncellemesi ---
         self.t += 1
         beta1, beta2, eps = 0.9, 0.999, 1e-8
         
-        # Ağırlıklar
         self.m_w = beta1 * self.m_w + (1 - beta1) * dw
         self.v_w = beta2 * self.v_w + (1 - beta2) * (dw**2)
         m_hat = self.m_w / (1 - beta1**self.t)
         v_hat = self.v_w / (1 - beta2**self.t)
         self.w -= lr * m_hat / (np.sqrt(v_hat) + eps)
         
-        # Yanlılık
         self.m_b = beta1 * self.m_b + (1 - beta1) * db
         self.v_b = beta2 * self.v_b + (1 - beta2) * (db**2)
         mb_hat = self.m_b / (1 - beta1**self.t)
@@ -119,15 +110,15 @@ class Dense:
 class BloodCellAI:
     def __init__(self):
         self.layers = [
-            Conv(3, 32, 3, pad=1),   # 0
-            LeakyReLU(),             # 1
-            MaxPool(),               # 2
-            Conv(32, 64, 3, pad=1),  # 3
-            LeakyReLU(),             # 4
-            MaxPool(),               # 5
-            Dense(64 * 7 * 7, 128),  # 6
-            LeakyReLU(),             # 7
-            Dense(128, 8)            # 8
+            Conv(3, 32, 3, pad=1),   
+            LeakyReLU(),             
+            MaxPool(),               
+            Conv(32, 64, 3, pad=1),  
+            LeakyReLU(),             
+            MaxPool(),               
+            Dense(64 * 7 * 7, 128),  
+            LeakyReLU(),             
+            Dense(128, 8)            
         ]
 
     def forward(self, x):

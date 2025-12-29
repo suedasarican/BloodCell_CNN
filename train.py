@@ -73,7 +73,6 @@ def train_model():
             }
             np.save('trained_weights.npy', weights)
 
-    # --- EĞİTİM SONUNDA GEÇMİŞİ KAYDET ---
     history = {
         'train_loss': train_losses,
         'train_acc': train_accuracies,
@@ -82,7 +81,6 @@ def train_model():
     with open('train_history.pkl', 'wb') as f:
         pickle.dump(history, f)
     print("\nEğitim geçmişi 'train_history.pkl' olarak kaydedildi.")
-    # -------------------------------------
 
     test_probs = model.forward(x_test)
     test_acc = calculate_accuracy(test_probs, y_test)
