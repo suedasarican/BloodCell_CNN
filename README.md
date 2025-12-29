@@ -1,5 +1,7 @@
 # BloodCell-AI: Pure NumPy CNN Implementation
 
+[![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/SuedaNur/BloodCell-AI)
+
 Projenin temel amacı, herhangi bir derin öğrenme kütüphanesi (**PyTorch, TensorFlow, Keras vb.**) kullanmadan, sadece **NumPy** kütüphanesi ve matematiksel formüller kullanılarak sıfırdan bir Evrişimli Sinir Ağı (CNN) mimarisi inşa etmek ve kan hücrelerini sınıflandırmaktır.
 
 ## Proje Özellikleri
@@ -64,3 +66,44 @@ Modeli sıfırdan eğitmek için `train.py` dosyasını çalıştırın. Veri se
 
 ```bash
 python train.py
+Eğitim tamamlandığında ağırlıklar trained_weights.npy olarak, eğitim geçmişi train_history.pkl olarak kaydedilir.
+
+2. Değerlendirme (Evaluation)
+Eğitilmiş modelin metriklerini ve karmaşıklık matrisini görmek için:
+
+Bash
+
+python evaluation.py
+3. Canlı Demo (Hugging Face Spaces)
+Kurulum yapmadan modeli tarayıcınız üzerinden hemen test etmek için aşağıdaki bağlantıyı kullanabilirsiniz:
+
+-> BloodCell-AI Canlı Demo
+
+4. Yerel Arayüz ile Test Etmek
+Gradio arayüzünü kendi bilgisayarınızda başlatmak için:
+
+Bash
+
+python serve.py
+
+Proje Yapısı
+BloodCell_CNN/
+├── Docs/                 # Proje dokümanları ve raporlar
+├── test_samples/         # Test için örnek hücre görüntüleri
+├── data_loader.py        # Veri setini indirme ve işleme modülü
+├── model.py              # CNN mimarisi (Conv, MaxPool, Dense sınıfları)
+├── utils.py              # im2col ve col2im fonksiyonları (Vektörizasyon)
+├── train.py              # Eğitim döngüsü ve backpropagation
+├── evaluation.py         # Performans değerlendirme ve grafik çizimi
+├── serve.py              # Gradio tabanlı test arayüzü
+├── bloodmnist.npz        # İndirilen veri seti dosyası
+├── trained_weights.npy   # Eğitilmiş model ağırlıkları
+├── train_history.pkl     # Eğitim loss/accuracy geçmişi
+└── README.md             # Proje dokümantasyonu
+
+Geliştirici
+Ad Soyad: Süeda Nur Sarıcan
+
+Öğrenci No: 23120205031
+
+Ders: Derin Öğrenme (Deep Learning)
