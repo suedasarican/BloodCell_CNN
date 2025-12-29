@@ -66,3 +66,27 @@ Modeli sıfırdan eğitmek için `train.py` dosyasını çalıştırın. Veri se
 
 ```bash
 python train.py
+```
+Eğitim tamamlandığında ağırlıklar trained_weights.npy olarak, eğitim geçmişi train_history.pkl olarak kaydedilir.
+
+### 2. Değerlendirme (Evaluation)
+Eğitilmiş modelin metriklerini ve karmaşıklık matrisini görmek için:
+```bash
+python evaluation.py
+```
+### 3. Canlı Demo (Hugging Face Spaces)
+Kurulum yapmadan modeli tarayıcınız üzerinden hemen test etmek için aşağıdaki bağlantıyı kullanabilirsiniz:
+
+-> [BloodCell-AI Canlı Demo](https://huggingface.co/spaces/SuedaNur/BloodCell-AI)
+
+### 4. Yerel Arayüz ile Test Etmek
+Gradio arayüzünü kendi bilgisayarınızda başlatmak için:
+```bash
+python serve.py
+```
+### Geliştirici
+Ad Soyad: Süeda Nur Sarıcan
+
+Öğrenci No: 23120205031
+
+Ders: Derin Öğrenme (Deep Learning)
