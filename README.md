@@ -1,7 +1,5 @@
 # BloodCell-AI: Pure NumPy CNN Implementation
 
-Bu proje, **İstanbul Medeniyet Üniversitesi - Derin Öğrenme Dersi Final Projesi** kapsamında geliştirilmiştir.
-
 Projenin temel amacı, herhangi bir derin öğrenme kütüphanesi (**PyTorch, TensorFlow, Keras vb.**) **KULLANMADAN**, sadece **NumPy** kütüphanesi ve matematiksel formüller kullanılarak sıfırdan bir Evrişimli Sinir Ağı (CNN) mimarisi inşa etmek ve kan hücrelerini sınıflandırmaktır.
 
 ## Proje Özellikleri
