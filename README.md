@@ -1,14 +1,10 @@
-# 🩸 BloodCell-AI: Pure NumPy CNN Implementation
-
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![NumPy](https://img.shields.io/badge/Library-NumPy%20Only-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
+# BloodCell-AI: Pure NumPy CNN Implementation
 
 Bu proje, **İstanbul Medeniyet Üniversitesi - Derin Öğrenme Dersi Final Projesi** kapsamında geliştirilmiştir.
 
 Projenin temel amacı, herhangi bir derin öğrenme kütüphanesi (**PyTorch, TensorFlow, Keras vb.**) **KULLANMADAN**, sadece **NumPy** kütüphanesi ve matematiksel formüller kullanılarak sıfırdan bir Evrişimli Sinir Ağı (CNN) mimarisi inşa etmek ve kan hücrelerini sınıflandırmaktır.
 
-## 🚀 Proje Özellikleri
+## Proje Özellikleri
 
 Bu projede kullanılan tüm katmanlar ve algoritmalar el yordamı ile kodlanmıştır:
 
@@ -19,7 +15,7 @@ Bu projede kullanılan tüm katmanlar ve algoritmalar el yordamı ile kodlanmı�
 * **Numerically Stable Softmax:** Üstel işlem taşmalarını önlemek için kararlı softmax fonksiyonu.
 * **Veri Artırma (Data Augmentation):** Eğitim sırasında rastgele yatay/dikey çevirme (Random Flip).
 
-## 📂 Veri Seti: BloodMNIST
+## Veri Seti: BloodMNIST
 
 Projede, tıbbi görüntü analizinde standart bir benchmark olan **BloodMNIST** veri seti kullanılmıştır.
 
@@ -27,7 +23,7 @@ Projede, tıbbi görüntü analizinde standart bir benchmark olan **BloodMNIST**
 * **Toplam Görüntü:** 17,092
 * **Sınıflar (8 Adet):** Nötrofil, Eozinofil, Basofil, Lenfosit, Monosit, Immature (Olgunlaşmamış), Eritroblast, Trombosit.
 
-## 📊 Performans Sonuçları
+## Performans Sonuçları
 
 Model, 15 Epoch sonunda aşağıdaki başarı oranlarına ulaşmıştır:
 
@@ -47,7 +43,7 @@ Model, 15 Epoch sonunda aşağıdaki başarı oranlarına ulaşmıştır:
 | **Eritroblast** | 0.95 | 0.96 | 0.96 |
 | **Trombosit** | 1.00 | 1.00 | 1.00 |
 
-## 🛠 Kurulum
+## Kurulum
 
 Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
@@ -63,7 +59,7 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
     pip install numpy opencv-python matplotlib seaborn scikit-learn gradio
     ```
 
-## ▶️ Kullanım
+## Kullanım
 
 ### 1. Modeli Eğitmek
 Modeli sıfırdan eğitmek için `train.py` dosyasını çalıştırın. Veri seti otomatik olarak indirilecek ve eğitim başlayacaktır.
