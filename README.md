@@ -84,6 +84,23 @@ Gradio arayüzünü kendi bilgisayarınızda başlatmak için:
 ```bash
 python serve.py
 ```
+### Proje Yapısı
+```plaintext
+BloodCell_CNN/
+├── Docs/                 # Proje dokümanları ve raporlar
+├── test_samples/         # Test için örnek hücre görüntüleri
+├── data_loader.py        # Veri setini indirme ve işleme modülü
+├── model.py              # CNN mimarisi (Conv, MaxPool, Dense sınıfları)
+├── utils.py              # im2col ve col2im fonksiyonları (Vektörizasyon)
+├── train.py              # Eğitim döngüsü ve backpropagation
+├── evaluation.py         # Performans değerlendirme ve grafik çizimi
+├── serve.py              # Gradio tabanlı test arayüzü
+├── bloodmnist.npz        # İndirilen veri seti dosyası
+├── trained_weights.npy   # Eğitilmiş model ağırlıkları
+├── train_history.pkl     # Eğitim loss/accuracy geçmişi
+└── README.md             # Proje dokümantasyonu
+```
+
 ### Geliştirici
 Ad Soyad: Süeda Nur Sarıcan
 
