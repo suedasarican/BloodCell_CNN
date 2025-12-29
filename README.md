@@ -59,21 +59,21 @@ Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
     pip install numpy opencv-python matplotlib seaborn scikit-learn gradio
     ```
 
-## Kullanım
+## ▶️ Kullanım
 
 ### 1. Modeli Eğitmek
 Modeli sıfırdan eğitmek için `train.py` dosyasını çalıştırın. Veri seti otomatik olarak indirilecek ve eğitim başlayacaktır.
 
 ```bash
 python train.py
+
 Eğitim tamamlandığında ağırlıklar trained_weights.npy olarak, eğitim geçmişi train_history.pkl olarak kaydedilir.
 
 2. Değerlendirme (Evaluation)
 Eğitilmiş modelin metriklerini ve karmaşıklık matrisini görmek için:
 
-Bash
-
 python evaluation.py
+
 3. Canlı Demo (Hugging Face Spaces)
 Kurulum yapmadan modeli tarayıcınız üzerinden hemen test etmek için aşağıdaki bağlantıyı kullanabilirsiniz:
 
@@ -81,8 +81,6 @@ Kurulum yapmadan modeli tarayıcınız üzerinden hemen test etmek için aşağ�
 
 4. Yerel Arayüz ile Test Etmek
 Gradio arayüzünü kendi bilgisayarınızda başlatmak için:
-
-Bash
 
 python serve.py
 
